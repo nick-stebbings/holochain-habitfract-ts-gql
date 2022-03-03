@@ -1,0 +1,30 @@
+{
+  "presets": ["@babel/preset-react"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          // "@Actions": "./src/Actions",
+          "@components": "./src/components",
+          "@definitions": "./src/definitions",
+          // "@Interfaces": "./src/Interfaces",
+          "@pages": "./src/pages",
+          // "@Reducers": "./src/Redux/Reducers",
+          // "@Redux": "./src/Redux",
+          // "@Services": "./src/Services",
+          // "@Server": "./server",
+          // "@Static": "./public/static",
+          "@styled": "./src/styled"
+        }
+      }
+    ],
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true
+      }
+    ]
+  ]
+}
