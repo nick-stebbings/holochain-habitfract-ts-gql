@@ -1,11 +1,6 @@
 use hdk::prelude::*;
 pub mod domain;
 
-// mod handlers;
-
-// pub use domain::*;
-// pub use handlers::*;
-
 use juniper::GraphQLObject;
 
 #[derive(GraphQLObject, Debug, Serialize, Deserialize, SerializedBytes, Clone)]

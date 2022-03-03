@@ -11,6 +11,7 @@ name = "habit_tracking"
 serde = "1"
 serde_json = "1.0.61"
 derive_more = "0"
+derive-new = "0.5.8"
 chrono = {version = "0.4", features = ["serde"]}
 hdk = "0.0.118"
 holo_hash = { version = "0.0.15", features = ["encoding"] }

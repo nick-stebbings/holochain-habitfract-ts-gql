@@ -52,7 +52,7 @@ pub struct DeleteDomainInput {
     id: juniper::ID,
 }
 
-#[derive(GraphQLObject, Debug, Serialize, Deserialize, SerializedBytes, Clone)]
+#[derive(GraphQLObject, Debug, Serialize, Deserialize, SerializedBytes, Clone, new)]
 pub struct CrudDomainPayload {
     agent_address: String, //HashString,
     domain: Domain,
