@@ -24,7 +24,7 @@ export const Middle = styled.div`
   margin: 0 0 1rem 0;
 `
 
-export const TopText = styled.div`
+export const MainText = styled.div`
   font-size: 64px;
   line-height: 80px;
   color: ${({ theme }) => theme.colors.offwhite};

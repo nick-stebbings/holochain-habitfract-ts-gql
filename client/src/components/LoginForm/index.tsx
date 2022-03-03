@@ -2,17 +2,16 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { useNavigate } from 'react-router-dom'
 // #endregion Global Imports
 
 // #region Local Imports
 // import { LoginFormActions } from "@Actions";
-import { Container, Top, TopText, SubText, Middle, Bottom } from './styled'
+import { Container, Top, MainText, SubText, Middle, Bottom } from './styled'
 // #endregion Local Imports
 
 // #region Interface Imports
 import { ILoginForm } from './LoginForm'
-import { useNavigate } from 'react-router-dom'
 // #endregion Interface Imports
 
 export const LoginForm: React.FunctionComponent<ILoginForm.IProps> = (
@@ -26,10 +25,10 @@ export const LoginForm: React.FunctionComponent<ILoginForm.IProps> = (
   return (
     <Container>
       <Top>
-        <TopText>Sign in</TopText>
+        <MainText>Welcome</MainText>
       </Top>
       <Middle>
-        <SubText>Sign in and start managing your habits!</SubText>
+        <SubText>Create a username and start managing your habits!</SubText>
       </Middle>
       <Bottom>
         <Formik
