@@ -1,13 +1,13 @@
 use juniper::{graphql_object, FieldResult};
 
 use super::Context;
-use crate::features::domain::{self, CreateDomainInput};
+use crate::features::domain::{self, CrudDomainPayload, CreateDomainInput};
 
 pub struct Mutation;
 
 #[graphql_object(Context = Context)]
 impl Mutation {
-    fn createDomain(input: CreateDomainInput) -> FieldResult<domain::CrudDomainPayload> {
+    fn createDomain(input: CreateDomainInput) -> FieldResult<CrudDomainPayload> {
         domain::handlers::create_domain(input)
     }
 
