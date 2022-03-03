@@ -12,6 +12,7 @@ import { Container, Top, TopText, SubText, Middle, Bottom } from './styled'
 
 // #region Interface Imports
 import { ILoginForm } from './LoginForm'
+import { useNavigate } from 'react-router-dom'
 // #endregion Interface Imports
 
 export const LoginForm: React.FunctionComponent<ILoginForm.IProps> = (
@@ -20,6 +21,7 @@ export const LoginForm: React.FunctionComponent<ILoginForm.IProps> = (
   // const loginForm = useSelector((state: IStore) => state.loginForm);
   // const dispatch = useDispatch();
   const initialValues: ILoginForm.LoginFormValues = { username: '' }
+  const navigate = useNavigate()
 
   return (
     <Container>
@@ -34,6 +36,9 @@ export const LoginForm: React.FunctionComponent<ILoginForm.IProps> = (
           initialValues={initialValues}
           onSubmit={(values, actions) => {
             console.log({ values, actions })
+            localStorage.setItem('username', values.username)
+
+            navigate('/profile')
             actions.setSubmitting(false)
           }}
         >
