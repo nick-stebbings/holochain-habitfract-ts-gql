@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
 import { ThemeProvider } from 'styled-components'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import { ApolloProvider } from '@apollo/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { theme } from './definitions/styled/theme'
 import { Home } from './pages/Home'
-import client from './services/holochainClient'
+import client from './graphql/holochainClient'
 import './index.css'
 
 const root = document.getElementById('root')

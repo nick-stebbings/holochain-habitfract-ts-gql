@@ -1,0 +1,60 @@
+type Query {
+  apiVersion: String!
+  domain(id: ID!): Domain!
+  # lists: ListConnection!
+  # item(id: ID!): Domain!
+  # items(id: ID!): ItemConnection!
+  # node(id: ID!): Node!
+}
+
+type Mutation {
+  # createList(input: CreateListInput!): CrudListPayload!
+  createDomain(input: CreateDomainInput!): CrudDomainPayload!
+  # updateDomain(input: UpdateDomainInput!): CrudDomainPayload!
+  # toggleDomainDone(input: ToggleDomainDoneInput!): CrudDomainPayload!
+  # deleteDomain(input: DeleteDomainInput!): CrudDomainPayload!
+}
+
+input CreateDomainInput {
+  id: ID!
+  description: String!
+  hashtag: String!
+}
+
+type CrudDomainPayload {
+  agent_address: String!
+  domain: DomainEdge!
+}
+
+# input UpdateDomainInput {
+#   id: ID!
+#   description: String!
+#   hashtag: String!
+# }
+
+interface Node {
+  id: ID!
+}
+
+type Domain implements Node {
+  id: ID!
+  description: String!
+  hashtag: String!
+}
+
+type DomainConnection {
+  edges: [DomainEdge!]!
+  pageInfo: PageInfo!
+}
+
+type DomainEdge {
+  cursor: String!
+  node: Domain!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String!
+  endCursor: String!
+}

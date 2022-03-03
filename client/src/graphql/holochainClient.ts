@@ -1,4 +1,4 @@
-import { AppWebsocket } from '@holochain/conductor-api'
+import { AppWebsocket } from '@holochain/client'
 import {
   ApolloClient,
   ApolloLink,

@@ -1,0 +1,12 @@
+mutation addDomain($input: CreateDomainInput!) {
+  createDomain(input: $input) {
+    agent_address
+    domain {
+      node {
+        id
+        description
+        hashtag
+      }
+    }
+  }
+}
