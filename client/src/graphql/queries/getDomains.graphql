@@ -1,0 +1,11 @@
+query getDomains {
+  domains {
+    edges {
+      node {
+        id
+        description
+        hashtag
+      }
+    }
+  }
+}

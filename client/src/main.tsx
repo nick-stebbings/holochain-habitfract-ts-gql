@@ -8,6 +8,7 @@ import { theme } from './definitions/styled/theme'
 import { Home } from './pages/Home'
 import client from './graphql/holochainClient'
 import './index.css'
+import { Profile } from './pages/Profile'
 
 const root = document.getElementById('root')
 
@@ -16,7 +17,12 @@ const App: FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/profile" element={<Home />}></Route>
+        <Route
+          path="/profile"
+          element={
+            <Profile username={localStorage.getItem('username') || ''} />
+          }
+        ></Route>
       </Routes>
     </BrowserRouter>
   )

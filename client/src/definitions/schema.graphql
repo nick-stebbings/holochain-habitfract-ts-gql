@@ -1,7 +1,7 @@
 type Query {
   apiVersion: String!
   domain(id: ID!): Domain!
-  # lists: ListConnection!
+  domains: DomainConnection!
   # item(id: ID!): Domain!
   # items(id: ID!): ItemConnection!
   # node(id: ID!): Node!
@@ -16,7 +16,6 @@ type Mutation {
 }
 
 input CreateDomainInput {
-  id: ID!
   description: String!
   hashtag: String!
 }

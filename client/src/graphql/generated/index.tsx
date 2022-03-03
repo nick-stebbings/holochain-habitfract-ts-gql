@@ -18,7 +18,6 @@ export type Scalars = {
 export type CreateDomainInput = {
   description: Scalars['String'];
   hashtag: Scalars['String'];
-  id: Scalars['ID'];
 };
 
 export type CrudDomainPayload = {
@@ -72,6 +71,7 @@ export type Query = {
   __typename?: 'Query';
   apiVersion: Scalars['String'];
   domain: Domain;
+  domains: DomainConnection;
 };
 
 
@@ -85,6 +85,11 @@ export type AddDomainMutationVariables = Exact<{
 
 
 export type AddDomainMutation = { __typename?: 'Mutation', createDomain: { __typename?: 'CrudDomainPayload', agent_address: string, domain: { __typename?: 'DomainEdge', node: { __typename?: 'Domain', id: string, description: string, hashtag: string } } } };
+
+export type GetDomainsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetDomainsQuery = { __typename?: 'Query', domains: { __typename?: 'DomainConnection', edges: Array<{ __typename?: 'DomainEdge', node: { __typename?: 'Domain', id: string, description: string, hashtag: string } }> } };
 
 
 export const AddDomainDocument = gql`
@@ -127,3 +132,43 @@ export function useAddDomainMutation(baseOptions?: Apollo.MutationHookOptions<Ad
 export type AddDomainMutationHookResult = ReturnType<typeof useAddDomainMutation>;
 export type AddDomainMutationResult = Apollo.MutationResult<AddDomainMutation>;
 export type AddDomainMutationOptions = Apollo.BaseMutationOptions<AddDomainMutation, AddDomainMutationVariables>;
+export const GetDomainsDocument = gql`
+    query getDomains {
+  domains {
+    edges {
+      node {
+        id
+        description
+        hashtag
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetDomainsQuery__
+ *
+ * To run a query within a React component, call `useGetDomainsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetDomainsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetDomainsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetDomainsQuery(baseOptions?: Apollo.QueryHookOptions<GetDomainsQuery, GetDomainsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetDomainsQuery, GetDomainsQueryVariables>(GetDomainsDocument, options);
+      }
+export function useGetDomainsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetDomainsQuery, GetDomainsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetDomainsQuery, GetDomainsQueryVariables>(GetDomainsDocument, options);
+        }
+export type GetDomainsQueryHookResult = ReturnType<typeof useGetDomainsQuery>;
+export type GetDomainsLazyQueryHookResult = ReturnType<typeof useGetDomainsLazyQuery>;
+export type GetDomainsQueryResult = Apollo.QueryResult<GetDomainsQuery, GetDomainsQueryVariables>;
