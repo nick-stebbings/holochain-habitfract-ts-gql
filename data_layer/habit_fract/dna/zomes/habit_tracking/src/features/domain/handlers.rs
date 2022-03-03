@@ -35,7 +35,7 @@ pub fn create_domain(domain: CreateDomainInput) -> FieldResult<CrudDomainPayload
     let _header_hash = create_entry(entry.clone())?;
     let _entry_hash = hash_entry(entry.clone())?;
 
-    //TODO create link
+    //TODO create link, fix pubkey returning to UI issue
     let agent_address = "a pub key".to_string();
     // WrappedAgentPubKey::from(AgentPubKey::from(agent_info.agent_initial_pubkey)).into();
     let output = CrudDomainPayload {

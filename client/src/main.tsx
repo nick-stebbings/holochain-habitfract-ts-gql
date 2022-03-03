@@ -6,13 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { theme } from './definitions/styled/theme'
 import { Home } from './pages/Home'
-
+import client from './services/holochainClient'
 import './index.css'
-
-const client = new ApolloClient({
-  uri: 'https://habfract.life/v1/graphql',
-  cache: new InMemoryCache(),
-})
 
 const root = document.getElementById('root')
 

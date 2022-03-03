@@ -7,6 +7,7 @@ specifiers:
   '@graphql-codegen/cli': ^2.6.2
   '@graphql-codegen/typescript': ^2.4.5
   '@graphql-codegen/typescript-operations': ^2.3.2
+  '@holochain/conductor-api': ^0.2.4
   '@innei-util/eslint-config-react-ts': ^0.1.2
   '@innei-util/prettier': ^0.1.3
   '@reduxjs/toolkit': ^1.8.0
@@ -39,6 +40,7 @@ specifiers:
 
 dependencies:
   '@apollo/client': 3.5.10_graphql@15.8.0+react@17.0.2
+  '@holochain/conductor-api': 0.2.4
   '@reduxjs/toolkit': 1.8.0_react-redux@7.2.6+react@17.0.2
   formik: 2.2.9_react@17.0.2
   graphql: 15.8.0
@@ -1417,6 +1419,21 @@ packages:
       graphql: 15.8.0
     dev: false
 
+  /@holochain/conductor-api/0.2.4:
+    resolution: {integrity: sha512-MoTUv+sAQA8d1XJyqSxdcxBAO+bkCKbvuzhEaDTOrqyct7LPUzivPYinoDqmwpF2R6/kZpQVw8FZ+zVwENPnVA==}
+    deprecated: Use @holochain/client instead
+    dependencies:
+      '@msgpack/msgpack': 2.4.0
+      cross-fetch: 3.1.5
+      isomorphic-ws: 4.0.1_ws@7.5.7
+      nanoid: 3.1.25
+      ws: 7.5.7
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - utf-8-validate
+    dev: false
+
   /@humanwhocodes/config-array/0.5.0:
     resolution: {integrity: sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg==}
     engines: {node: '>=10.10.0'}
@@ -1488,6 +1505,11 @@ packages:
       - prettier
       - typescript
     dev: true
+
+  /@msgpack/msgpack/2.4.0:
+    resolution: {integrity: sha512-5qzv53J43V8GaYsaETs29Q0Ehw9Dog6SG18MASZRQDuZYXtA5T7pymGE2S40NL0X8sjl8+TybmRa5O8d45V7MQ==}
+    engines: {node: '>= 10'}
+    dev: false
 
   /@n1ru4l/graphql-live-query/0.9.0_graphql@15.8.0:
     resolution: {integrity: sha512-BTpWy1e+FxN82RnLz4x1+JcEewVdfmUhV1C6/XYD5AjS7PQp9QFF7K8bCD6gzPTr2l+prvqOyVueQhFJxB1vfg==}
@@ -2678,7 +2700,6 @@ packages:
       node-fetch: 2.6.7
     transitivePeerDependencies:
       - encoding
-    dev: true
 
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -4188,6 +4209,14 @@ packages:
       - encoding
     dev: true
 
+  /isomorphic-ws/4.0.1_ws@7.5.7:
+    resolution: {integrity: sha512-BhBvN2MBpWTaSHdWRb/bwdZJ1WaehQ2L1KngkCkfLUGF0mAWAT1sQUQacEmQ0jXkFw/czDXPNQSL5u2/Krsz1w==}
+    peerDependencies:
+      ws: '*'
+    dependencies:
+      ws: 7.5.7
+    dev: false
+
   /isomorphic-ws/4.0.1_ws@8.5.0:
     resolution: {integrity: sha512-BhBvN2MBpWTaSHdWRb/bwdZJ1WaehQ2L1KngkCkfLUGF0mAWAT1sQUQacEmQ0jXkFw/czDXPNQSL5u2/Krsz1w==}
     peerDependencies:
@@ -4700,7 +4729,6 @@ packages:
     resolution: {integrity: sha512-rdwtIXaXCLFAQbnfqDRnI6jaRHp9fTcYBjtFKE8eezcZ7LuLjhUaQGNeMXf1HmRoCH32CLz6XwX0TtxEOS/A3Q==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: true
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
@@ -4734,7 +4762,6 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
-    dev: true
 
   /node-int64/0.4.0:
     resolution: {integrity: sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=}
@@ -6064,7 +6091,6 @@ packages:
 
   /tr46/0.0.3:
     resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
-    dev: true
 
   /ts-invariant/0.9.4:
     resolution: {integrity: sha512-63jtX/ZSwnUNi/WhXjnK8kz4cHHpYS60AnmA6ixz17l7E12a5puCWFlNpkne5Rl0J8TBPVHpGjsj4fxs8ObVLQ==}
@@ -6336,7 +6362,6 @@ packages:
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
-    dev: true
 
   /whatwg-fetch/3.6.2:
     resolution: {integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==}
@@ -6347,7 +6372,6 @@ packages:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
-    dev: true
 
   /which-boxed-primitive/1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}
@@ -6417,7 +6441,6 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
-    dev: true
 
   /ws/8.5.0:
     resolution: {integrity: sha512-BWX0SWVgLPzYwF8lTzEy1egjhS4S4OEAHfsO8o65WOVsrnSRGaSiUaa9e0ggGlkMTtBlmOpEXiie9RUcBO86qg==}

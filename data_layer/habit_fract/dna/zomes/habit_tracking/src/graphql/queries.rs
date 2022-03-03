@@ -1,6 +1,6 @@
 use juniper::{graphql_object, FieldResult};
 
-use crate::features::domain;
+use crate::features::domain::{handlers, Domain};
 
 use super::Context;
 
@@ -12,8 +12,8 @@ impl Query {
         "0.0.1"
     }
 
-    fn domain(id: juniper::ID) -> FieldResult<domain::Domain> {
-        domain::handlers::get_domain(id)
+    fn domain(id: juniper::ID) -> FieldResult<Domain> {
+        handlers::get_domain(id)
     }
 
     // fn lists() -> FieldResult<list::ListConnection> {
