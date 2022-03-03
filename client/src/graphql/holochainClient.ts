@@ -38,7 +38,7 @@ const holochainLink = new ApolloLink((operation) => {
       }
       appWebsocket
         .callZome({
-          cap: null,
+          cap_secret: null,
           cell_id: cellId,
           zome_name: HAPP_ZOME_NAME,
           fn_name: 'graphql',
